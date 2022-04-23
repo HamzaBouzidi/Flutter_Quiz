@@ -16,7 +16,7 @@ class MyAppState extends State<MyApp> {
   var QuestionIndex = 0;
   void AnswerQuestion() {
     setState(() {
-      QuestionIndex++;
+      QuestionIndex = QuestionIndex + 1;
     });
 
     print(QuestionIndex);
@@ -35,9 +35,7 @@ class MyAppState extends State<MyApp> {
         body: Column(
           children: [
             Text(QuestionList[QuestionIndex]),
-            RaisedButton(
-                child: Text('Answer 1'),
-                onPressed: () => print("Answer 1 chosen!")),
+            RaisedButton(child: Text('Answer 1'), onPressed: AnswerQuestion),
             RaisedButton(
                 child: Text('Answer 2'),
                 onPressed: () => print("Answer 2 chosen!")),
